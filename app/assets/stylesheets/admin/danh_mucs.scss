@@ -1,0 +1,19 @@
+// Place all the styles related to the admin/danh_mucs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.function-headline h1 {
+	/* margin-top: -105px; */
+	margin-bottom: 30px;
+	/* position: absolute; */
+	margin-top: 0;
+}
+
+.show-table {
+	font-size: 1.4em;
+	table-layout: fixed;
+}
+
+.show-table td, .show-table th {
+	padding: 5px 20px;
+}

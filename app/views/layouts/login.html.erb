@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bl</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,900" rel="stylesheet' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="login-body">
+
+<div class="login-wrapper col-md-3">
+	<%= yield %>	
+</div>
+</body>
+</html>

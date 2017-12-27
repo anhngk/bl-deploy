@@ -1,0 +1,46 @@
+<div class="container-fluid">
+	<div class="slider-section row">
+		<div class="owl-carousel owl-theme">
+			<%= image_tag 'slider/about-us-banner.jpg', alt: "Ông đồng" %>
+			<%= image_tag 'slider/300.jpg', alt: "Ông đồng" %>
+			<%= image_tag 'slider/Danfoss.jpg', alt: "Ông đồng" %>
+			<%= image_tag 'slider/HVAC.jpg', alt: "Ông đồng" %>
+			<img src="http://via.placeholder.com/1366x300" alt="">
+		</div>
+	</div>
+	<div class="container product-listing-section">
+		<div class="product-category col-md-3">
+			<h3>Danh mục mặt hàng</h3>
+			<div class="category-list">
+				<ul">
+					<% DanhMuc.all.each do |danh_muc| %>
+					<%= link_to hang_hoas_path(danh_muc_id: danh_muc.id) do %>
+					<li><%= danh_muc.ten_danh_muc %></li>
+					<% end %>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="product-listing col-md-9">
+			<div class="category-title" style="margin-bottom: 30px">
+			</div>
+			<div class="product-show">
+				<% @hang_hoas.each do |hang_hoa| %>
+					<div class="product col-md-3">
+						<%= link_to hang_hoa do %>
+							<%= image_tag hang_hoa.image.url(:thumb) %>
+							<div class="product-name"><%= hang_hoa.ten_hang %></div>
+						<% end %>
+						<div class="product-price"><%= number_to_currency(hang_hoa.gias.last[:gia_ban], locale: :vn) %></div>
+					</div>
+				<% end %>
+			</div>
+			<div class="product-pagination col-md-12">
+				<div class="pull-right">
+					<%= paginate @hang_hoas, theme: 'twitter-bootstrap-3' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
